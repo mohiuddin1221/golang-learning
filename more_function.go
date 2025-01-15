@@ -1,22 +1,50 @@
 package main
-import(
+
+import (
 	"fmt"
 )
-func PrintSomething(){
-	fmt.Println("Education must be free")
+
+func WelcomeMessage() {
+	fmt.Println("Welcome to the Application")
 }
-func SayHello(name string){
-	fmt.Println("Welcome to Golang Course, ", name)
-    
+
+func GetUserName() string {
+	var name string
+	fmt.Println("Please Enter your Name:")
+	fmt.Scanln(&name)
+	return name
 }
-func GoodBye(){
-	fmt.Println("Goodbye")
+
+func GetTwoNumbers() (int, int) {
+	var num1 int
+	var num2 int
+	fmt.Println("Enter Your First Number:")
+	fmt.Scanln(&num1)
+	fmt.Println("Enter Your Second Number:")
+	fmt.Scanln(&num2)
+	return num1, num2
+}
+
+func SumNumbers(num1 int, num2 int) int {
+	sum := num1 + num2
+	return sum
+}
+
+func Display(name string, sum int) {
+	fmt.Println("Hello", name)
+	fmt.Println("The sum of numbers is:", sum)
+}
+
+func GoodBye() {
+	fmt.Println("Thank you for using the Application")
+	fmt.Println("GoodBye!")
 }
 
 func main() {
-	PrintSomething()
-	SayHello("Mohiuddin")
+	WelcomeMessage()
+	name := GetUserName()
+	num1, num2 := GetTwoNumbers()
+	sum := SumNumbers(num1, num2)
+	Display(name, sum)
 	GoodBye()
-
-
 }
